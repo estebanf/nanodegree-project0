@@ -1,9 +1,13 @@
 package com.estebanf.nanodegree.project0;
 
 import android.app.Activity;
+import android.content.Context;
 import android.os.Bundle;
 import android.view.Menu;
 import android.view.MenuItem;
+import android.view.View;
+import android.widget.Button;
+import android.widget.Toast;
 
 
 public class AppLauncher extends Activity {
@@ -34,5 +38,11 @@ public class AppLauncher extends Activity {
         }
 
         return super.onOptionsItemSelected(item);
+    }
+    public void buttonClickedHandler(View view){
+        CharSequence appName = ((Button)view).getText();
+        Toast toast = Toast.makeText(getApplicationContext(),"This button will launch: " + appName,Toast.LENGTH_SHORT);
+        toast.show();
+
     }
 }
